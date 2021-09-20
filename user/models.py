@@ -5,7 +5,7 @@ class User(models.Model):
     username = models.CharField(max_length=64,
                                 verbose_name='사용자명')
     useremail = models.EmailField(max_length=128,
-                                  verbose_name='사용자이메일')
+                                  verbose_name='사용자이메일', null=True)
     password = models.CharField(max_length=64,
                                 verbose_name='비밀번호')
     registered_dttm = models.DateTimeField(auto_now_add=True,

@@ -12,18 +12,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name='Board',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=64, verbose_name='사용자명')),
-                ('useremail', models.EmailField(max_length=128, null=True, verbose_name='사용자이메일')),
-                ('password', models.CharField(max_length=64, verbose_name='비밀번호')),
+                ('title', models.CharField(max_length=64, verbose_name='제목')),
+                ('contents', models.TextField(verbose_name='내용')),
                 ('registered_dttm', models.DateTimeField(auto_now_add=True, verbose_name='등록시간')),
             ],
             options={
-                'verbose_name': '사용자',
-                'verbose_name_plural': '사용자',
-                'db_table': 'siwon_user',
+                'verbose_name': '게시글',
+                'verbose_name_plural': '게시글',
+                'db_table': 'siwon_board',
             },
         ),
     ]
